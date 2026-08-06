@@ -1,9 +1,13 @@
-export default function ComponentName() {
+export default function Footer() {
   return (
-    <section className="min-h-screen flex items-center justify-center">
-      <h1 className="text-5xl font-bold">
-        Footer
-      </h1>
-    </section>
+    <footer className="bg-black py-8 text-center text-gray-400">
+      <p>
+        © {new Date().getFullYear()} Dinesh Kumar.
+      </p>
+
+      <p className="mt-2">
+        Built with React, FastAPI and ❤️
+      </p>
+    </footer>
   );
 }
