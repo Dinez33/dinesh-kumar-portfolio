@@ -1,9 +1,30 @@
-export default function ComponentName() {
+import { experience } from "../../data/experience";
+import TimelineCard from "./TimelineCard";
+import SectionTitle from "../Common/SectionTitle";
+
+export default function Experience() {
   return (
-    <section className="min-h-screen flex items-center justify-center">
-      <h1 className="text-5xl font-bold">
-        Experience Page
-      </h1>
+    <section
+      id="experience"
+      className="py-24 bg-[#050816] text-white"
+    >
+      <div className="max-w-6xl mx-auto px-6">
+
+        <SectionTitle
+          title="Work Experience"
+          subtitle="Career Journey"
+        />
+
+        <div className="space-y-8">
+          {experience.map((job) => (
+            <TimelineCard
+              key={job.id}
+              job={job}
+            />
+          ))}
+        </div>
+
+      </div>
     </section>
   );
 }
