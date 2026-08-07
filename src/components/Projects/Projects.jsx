@@ -6,7 +6,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="py-24 bg-slate-950 text-white"
+      className="py-24 bg-background text-text"
     >
       <div className="max-w-7xl mx-auto px-6">
 

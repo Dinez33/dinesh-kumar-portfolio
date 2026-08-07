@@ -12,7 +12,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 bg-slate-950 text-white"
+      className="py-24 bg-background text-text"
     >
       <div className="max-w-6xl mx-auto px-6">
 
@@ -30,7 +30,7 @@ export default function Contact() {
             Let's Build Something Amazing 🚀
           </h2>
 
-          <p className="mt-6 text-gray-400 max-w-2xl mx-auto leading-8">
+          <p className="mt-6 text-muted max-w-2xl mx-auto leading-8">
             I'm currently open to full-time opportunities, freelance projects,
             and exciting collaborations. If you think I'd be a good fit for
             your team, feel free to reach out.
@@ -45,7 +45,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="bg-slate-900 rounded-2xl p-8 border border-slate-800"
+            className="bg-slate-900 rounded-2xl p-8 border border-border"
           >
 
             <h3 className="text-3xl font-bold mb-8">

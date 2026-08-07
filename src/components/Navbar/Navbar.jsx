@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import ThemeToggle from "../Common/ThemeToggle";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -13,18 +15,31 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 w-full bg-[#050816]/80 backdrop-blur-md z-50 border-b border-gray-800">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-cyan-400">
+    <nav
+      className="sticky top-0 z-50 border-b backdrop-blur-md"
+      style={{
+        background: "rgba(255,255,255,0.85)",
+        borderColor: "var(--border)",
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        {/* Logo */}
+        <a
+          href="#home"
+          className="text-2xl font-extrabold"
+          style={{ color: "var(--primary)" }}
+        >
           DK
-        </h1>
+        </a>
 
-        <ul className="hidden md:flex gap-8">
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex items-center gap-8">
           {menu.map((item) => (
             <li key={item}>
               <a
                 href={`#${item.toLowerCase()}`}
-                className="hover:text-cyan-400 transition"
+                className="font-medium transition hover:text-blue-600"
+                style={{ color: "var(--text)" }}
               >
                 {item}
               </a>
@@ -32,25 +47,45 @@ export default function Navbar() {
           ))}
         </ul>
 
+        {/* Right Side */}
+        <div className="hidden md:flex items-center">
+          <ThemeToggle />
+        </div>
+
+        {/* Mobile Menu Button */}
         <button
           className="md:hidden"
           onClick={() => setOpen(!open)}
+          style={{ color: "var(--text)" }}
         >
-          ☰
+          {open ? <FaTimes size={22} /> : <FaBars size={22} />}
         </button>
       </div>
 
+      {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden bg-[#111827]">
+        <div
+          className="md:hidden border-t"
+          style={{
+            background: "var(--background)",
+            borderColor: "var(--border)",
+          }}
+        >
           {menu.map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="block px-6 py-3 border-b border-gray-700"
+              className="block px-6 py-4 hover:bg-gray-100 dark:hover:bg-slate-800 transition"
+              style={{ color: "var(--text)" }}
+              onClick={() => setOpen(false)}
             >
               {item}
             </a>
           ))}
+
+          <div className="flex justify-end px-6 py-4">
+            <ThemeToggle />
+          </div>
         </div>
       )}
     </nav>

@@ -6,7 +6,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="py-24 bg-[#050816] text-white"
+      className="py-24 bg-[#050816] text-text"
     >
       <div className="max-w-6xl mx-auto px-6">
 

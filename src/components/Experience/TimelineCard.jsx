@@ -21,7 +21,7 @@ export default function TimelineCard({ job }) {
         {job.company}
       </p>
 
-      <p className="text-gray-400 mb-5">
+      <p className="text-muted mb-5">
         {job.duration}
       </p>
 

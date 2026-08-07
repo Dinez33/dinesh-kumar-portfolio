@@ -6,7 +6,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="py-24 bg-[#050816] text-white"
+      className="py-24 bg-[#050816] text-text"
     >
       <div className="max-w-7xl mx-auto px-6">
 
