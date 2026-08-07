@@ -8,6 +8,7 @@ import {
   FaDatabase,
   FaShoppingCart,
   FaGlobe,
+  FaUserTie,
 } from "react-icons/fa";
 
 export const projects = [
@@ -30,8 +31,7 @@ export const projects = [
       "React",
       "FastAPI",
       "Python",
-      "OpenAI",
-      "PostgreSQL",
+      "GrokAI",
     ],
 
     github: "#",
@@ -45,7 +45,7 @@ export const projects = [
     category: "Personal Project",
     year: "2025",
     status: "Completed",
-    private: false,
+    private: true,
 
     icon: FaChrome,
     color: "#22C55E",
@@ -61,30 +61,32 @@ export const projects = [
       "REST API",
     ],
 
-    github: "#",
-    demo: "#",
+    github: null,
+    demo: null,
   },
 
   {
     id: 3,
-    title: "Developer Portfolio",
-    featured: false,
+    title: "Interview Assessment Platform",
+    featured: true,
     category: "Personal Project",
     year: "2026",
     status: "In Progress",
     private: false,
 
-    icon: FaGlobe,
-    color: "#06B6D4",
+    icon: FaUserTie,
+    color: "#6366F1",
 
     description:
-      "Modern full-stack developer portfolio built using React and FastAPI with animations, responsive design, project showcase, and contact functionality.",
+      "AI-powered interview assessment platform that analyzes resumes, calculates ATS scores, provides resume improvement suggestions, conducts mock interviews for candidates, and generates interview questions with suggested answers for HR based on uploaded resumes.",
 
     technologies: [
       "React",
+      "Python",
       "FastAPI",
-      "Tailwind CSS",
-      "Framer Motion",
+      "Gemini AI",
+      "PostgreSQL",
+      "Tailwind CSS"
     ],
 
     github: "#",
