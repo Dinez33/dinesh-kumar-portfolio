@@ -6,39 +6,33 @@ export default function TimelineCard({ job }) {
     <motion.div
       initial={{ opacity: 0, x: -40 }}
       whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: .5 }}
-      className="relative bg-slate-900 rounded-xl p-8 border border-slate-700"
+      transition={{ duration: 0.5 }}
+      className="relative rounded-xl border p-8"
+      style={{ backgroundColor: "var(--card)", borderColor: "var(--border)" }}
     >
-      <div className="absolute -left-5 top-10 w-10 h-10 rounded-full bg-cyan-500 flex items-center justify-center">
+      <div className="absolute -left-5 top-10 flex h-10 w-10 items-center justify-center rounded-full text-white" style={{ backgroundColor: "var(--primary)" }}>
         <FaBriefcase />
       </div>
 
-      <h3 className="text-2xl font-bold">
-        {job.role}
-      </h3>
+      <h3 className="text-2xl font-bold">{job.role}</h3>
 
-      <p className="text-cyan-400 mt-2">
+      <p className="mt-2" style={{ color: "var(--accent)" }}>
         {job.company}
       </p>
 
-      <p className="text-muted mb-5">
+      <p className="mb-5" style={{ color: "var(--muted)" }}>
         {job.duration}
       </p>
 
-      <ul className="space-y-2 text-gray-300">
+      <ul className="space-y-2" style={{ color: "var(--muted)" }}>
         {job.achievements.map((item) => (
-          <li key={item}>
-            • {item}
-          </li>
+          <li key={item}>• {item}</li>
         ))}
       </ul>
 
-      <div className="flex flex-wrap gap-2 mt-6">
+      <div className="mt-6 flex flex-wrap gap-2">
         {job.technologies.map((tech) => (
-          <span
-            key={tech}
-            className="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-sm"
-          >
+          <span key={tech} className="rounded-full px-3 py-1 text-sm" style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)", color: "var(--primary)" }}>
             {tech}
           </span>
         ))}

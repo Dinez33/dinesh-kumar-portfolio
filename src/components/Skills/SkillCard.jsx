@@ -5,22 +5,14 @@ export default function SkillCard({ skill }) {
 
   return (
     <motion.div
-      whileHover={{
-        y: -10,
-        scale: 1.05,
-      }}
+      whileHover={{ y: -10, scale: 1.05 }}
       transition={{ duration: 0.25 }}
-      className="bg-slate-900 rounded-2xl p-6 border border-slate-700 hover:border-cyan-400 shadow-lg"
+      className="rounded-2xl border p-6 shadow-lg"
+      style={{ backgroundColor: "var(--card)", borderColor: "var(--border)" }}
     >
-      <Icon
-        size={55}
-        color={skill.color}
-        className="mx-auto mb-4"
-      />
+      <Icon size={55} color={skill.color} className="mx-auto mb-4" />
 
-      <h3 className="text-center text-lg font-semibold">
-        {skill.name}
-      </h3>
+      <h3 className="text-center text-lg font-semibold">{skill.name}</h3>
     </motion.div>
   );
 }

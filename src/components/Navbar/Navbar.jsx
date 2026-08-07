@@ -5,41 +5,34 @@ import ThemeToggle from "../Common/ThemeToggle";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  const menu = [
-    "Home",
-    "About",
-    "Skills",
-    "Experience",
-    "Projects",
-    "Contact",
-  ];
+  const menu = ["Home", "About", "Skills", "Experience", "Projects", "Contact"];
 
   return (
     <nav
       className="sticky top-0 z-50 border-b backdrop-blur-md"
       style={{
-        background: "rgba(255,255,255,0.85)",
+        backgroundColor: "var(--navbar-bg)",
         borderColor: "var(--border)",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        {/* Logo */}
-        <a
-          href="#home"
-          className="text-2xl font-extrabold"
-          style={{ color: "var(--primary)" }}
-        >
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+        <a href="#home" className="text-2xl font-extrabold" style={{ color: "var(--primary)" }}>
           DK
         </a>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden items-center gap-8 md:flex">
           {menu.map((item) => (
             <li key={item}>
               <a
                 href={`#${item.toLowerCase()}`}
-                className="font-medium transition hover:text-blue-600"
+                className="font-medium transition"
                 style={{ color: "var(--text)" }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = "var(--primary)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = "var(--text)";
+                }}
               >
                 {item}
               </a>
@@ -47,12 +40,10 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Right Side */}
-        <div className="hidden md:flex items-center">
+        <div className="hidden items-center md:flex">
           <ThemeToggle />
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           className="md:hidden"
           onClick={() => setOpen(!open)}
@@ -62,12 +53,11 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {open && (
         <div
-          className="md:hidden border-t"
+          className="border-t md:hidden"
           style={{
-            background: "var(--background)",
+            backgroundColor: "var(--background)",
             borderColor: "var(--border)",
           }}
         >
@@ -75,9 +65,15 @@ export default function Navbar() {
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="block px-6 py-4 hover:bg-gray-100 dark:hover:bg-slate-800 transition"
+              className="block px-6 py-4 transition"
               style={{ color: "var(--text)" }}
               onClick={() => setOpen(false)}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "var(--surface)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "transparent";
+              }}
             >
               {item}
             </a>

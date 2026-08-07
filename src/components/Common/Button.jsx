@@ -1,40 +1,28 @@
-export default function Button({
-  children,
-  href,
-  variant = "primary",
-}) {
-  const base =
-    "px-6 py-3 rounded-xl font-semibold transition duration-300";
+export default function Button({ children, href, variant = "primary" }) {
+  const base = "rounded-xl px-6 py-3 font-semibold transition duration-300";
 
-  const primary =
-    "bg-blue-600 text-white hover:bg-blue-700 shadow-lg";
+  const primary = "text-white shadow-lg";
+  const secondary = "border";
 
-  const secondary =
-    "border border-gray-300 hover:bg-gray-100 dark:border-slate-600 dark:hover:bg-slate-800";
+  const style =
+    variant === "primary"
+      ? { backgroundColor: "var(--primary)", color: "#fff" }
+      : {
+          borderColor: "var(--border)",
+          color: "var(--text)",
+          backgroundColor: "var(--card)",
+        };
 
   if (href) {
     return (
-      <a
-        href={href}
-        className={`${base} ${
-          variant === "primary"
-            ? primary
-            : secondary
-        }`}
-      >
+      <a href={href} className={`${base} ${variant === "primary" ? primary : secondary}`} style={style}>
         {children}
       </a>
     );
   }
 
   return (
-    <button
-      className={`${base} ${
-        variant === "primary"
-          ? primary
-          : secondary
-      }`}
-    >
+    <button className={`${base} ${variant === "primary" ? primary : secondary}`} style={style}>
       {children}
     </button>
   );

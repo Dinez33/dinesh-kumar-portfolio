@@ -6,77 +6,46 @@ export default function ProjectCard({ project }) {
 
   return (
     <motion.div
-      whileHover={{
-        y: -10,
-        scale: 1.02,
-      }}
+      whileHover={{ y: -10, scale: 1.02 }}
       transition={{ duration: 0.3 }}
-      className="bg-slate-900 rounded-2xl p-8 border border-slate-700 hover:border-cyan-500"
+      className="rounded-2xl border p-8"
+      style={{ backgroundColor: "var(--card)", borderColor: "var(--border)" }}
     >
-      <div
-        className="w-20 h-20 rounded-2xl flex items-center justify-center mb-6"
-        style={{
-          backgroundColor: project.color + "20",
-        }}
-      >
-        <Icon
-          size={42}
-          color={project.color}
-        />
+      <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-2xl" style={{ backgroundColor: `${project.color}20` }}>
+        <Icon size={42} color={project.color} />
       </div>
 
-      <h3 className="text-2xl font-bold mb-4">
-        {project.title}
-      </h3>
+      <h3 className="mb-4 text-2xl font-bold">{project.title}</h3>
 
-      <p className="text-gray-300 leading-7 mb-6">
+      <p className="mb-6 leading-7" style={{ color: "var(--muted)" }}>
         {project.description}
       </p>
 
-    <div className="flex flex-wrap gap-2 mb-6">
-    {project.technologies.map((tech) => (
-        <span
-        key={tech}
-        className="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-sm"
-        >
-        {tech}
-        </span>
-    ))}
-    </div>
+      <div className="mb-6 flex flex-wrap gap-2">
+        {project.technologies.map((tech) => (
+          <span key={tech} className="rounded-full px-3 py-1 text-sm" style={{ backgroundColor: "color-mix(in srgb, var(--primary) 15%, transparent)", color: "var(--primary)" }}>
+            {tech}
+          </span>
+        ))}
+      </div>
 
-    <div className="flex gap-4 mt-6">
-
+      <div className="mt-6 flex gap-4">
         {project.github && (
-            <a
-            href={project.github}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 hover:text-cyan-400"
-            >
+          <a href={project.github} target="_blank" rel="noreferrer" className="flex items-center gap-2" style={{ color: "var(--text)" }}>
             <FaGithub />
             GitHub
-            </a>
+          </a>
         )}
 
         {project.demo && (
-            <a
-            href={project.demo}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 hover:text-cyan-400"
-            >
+          <a href={project.demo} target="_blank" rel="noreferrer" className="flex items-center gap-2" style={{ color: "var(--text)" }}>
             <FaExternalLinkAlt />
             Live Demo
-            </a>
+          </a>
         )}
 
-        {project.private && (
-            <span className="text-orange-400 font-medium">
-            🔒 Enterprise Project (Private)
-            </span>
-        )}
-
-    </div>
+        {project.private && <span className="font-medium" style={{ color: "#f59e0b" }}>🔒 Enterprise Project (Private)</span>}
+      </div>
     </motion.div>
   );
 }
