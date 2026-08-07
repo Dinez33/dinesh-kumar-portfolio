@@ -6,7 +6,7 @@ export default function Footer() {
       </p>
 
       <p className="mt-2">
-        Built with React, FastAPI and ❤️
+        Built with React
       </p>
     </footer>
   );
