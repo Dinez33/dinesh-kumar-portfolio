@@ -34,8 +34,8 @@ export const projects = [
       "GrokAI",
     ],
 
-    github: "#",
-    demo: "#",
+    github: "https://github.com/Dinez33/smartspend-ai",
+    demo: "https://smartspend-ai-amgz.onrender.com/",
   },
 
   {

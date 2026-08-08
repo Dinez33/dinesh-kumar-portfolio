@@ -37,7 +37,7 @@ export default function Contact() {
 
               <div className="flex items-center gap-4">
                 <FaPhone className="text-2xl" style={{ color: "var(--accent)" }} />
-                <span style={{ color: "var(--muted)" }}>+91 XXXXXXXXXX</span>
+                <span style={{ color: "var(--muted)" }}>+91 8608275600</span>
               </div>
 
               <div className="flex items-center gap-4">
@@ -47,10 +47,10 @@ export default function Contact() {
             </div>
 
             <div className="mt-10 flex gap-6 text-3xl">
-              <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener noreferrer" style={{ color: "var(--text)" }}>
+              <a href="https://github.com/Dinez33" target="_blank" rel="noopener noreferrer" style={{ color: "var(--text)" }}>
                 <FaGithub />
               </a>
-              <a href="https://linkedin.com/in/YOUR_LINKEDIN_USERNAME" target="_blank" rel="noopener noreferrer" style={{ color: "var(--text)" }}>
+              <a href="https://www.linkedin.com/in/dineshkumarnp/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--text)" }}>
                 <FaLinkedin />
               </a>
             </div>
@@ -74,7 +74,7 @@ export default function Contact() {
                 Contact Me
               </a>
 
-              <a href="/resume.pdf" download className="flex items-center gap-2 rounded-lg border border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-slate-900">
+              <a href="/Dineshkumar_Developer.pdf" download className="flex items-center gap-2 rounded-lg border border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-slate-900">
                 <FaDownload />
                 Download Resume
               </a>

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-import resume from "../../assets/resume.pdf";
+import resume from "/Dineshkumar_Developer.pdf";
 
 export default function Hero() {
   return (
@@ -72,10 +72,10 @@ export default function Hero() {
           </div>
 
           <div className="mt-10 flex gap-6 text-3xl">
-            <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noreferrer" style={{ color: "var(--text)" }}>
+            <a href="https://github.com/Dinez33" target="_blank" rel="noreferrer" style={{ color: "var(--text)" }}>
               <FaGithub />
             </a>
-            <a href="https://linkedin.com/in/YOUR_PROFILE" target="_blank" rel="noreferrer" style={{ color: "var(--text)" }}>
+            <a href="https://www.linkedin.com/in/dineshkumarnp/" target="_blank" rel="noreferrer" style={{ color: "var(--text)" }}>
               <FaLinkedin />
             </a>
             <a href="mailto:dinezk333@gmail.com" style={{ color: "var(--text)" }}>
@@ -110,15 +110,16 @@ export default function Hero() {
           name: "Dinesh Kumar",
           role: "Senior Full Stack Engineer",
           experience: "5+ Years",
-          backend: ["PHP", "Python", "FastAPI"],
+          backend: ["PHP", "Python"],
           frontend: ["React", "JavaScript"],
           databases: ["MySQL", "PostgreSQL"],
           skills: [
-            "Docker",
-            "REST APIs",
-            "AI/LLM",
             "CodeIgniter",
-            "Laravel"
+            "Laravel",
+            "REST APIs",
+            "FastAPI",
+            "AI/LLM",
+            "Docker"
           ]
         };`}
               </pre>
