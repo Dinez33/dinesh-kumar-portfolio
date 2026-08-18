@@ -72,7 +72,7 @@ export const projects = [
     category: "Personal Project",
     year: "2026",
     status: "In Progress",
-    private: false,
+    private: true,
 
     icon: FaUserTie,
     color: "#6366F1",
@@ -89,8 +89,10 @@ export const projects = [
       "Tailwind CSS"
     ],
 
-    github: "https://github.com/Dinez33/Resume-Assessment",
-    demo: "https://ai-resume-assessment.vercel.app/",
+    // github: "https://github.com/Dinez33/Resume-Assessment",
+    // demo: "https://ai-resume-assessment.vercel.app/",
+    github: null,
+    demo: null,
   },
 
   {
